@@ -80,6 +80,12 @@ class Reviewer (Mentor):
         res = f'Имя:{self.name} \n Фамилия:{self.surname}'
         return res
 
+def __lt__(self.average_rating, self.rate_hw):
+    return len(self.average_rating) < len(self.rate_hw)
+
+
+
+
 some2_student = Student('Anna', 'Stepanova', 'your_gender')
 some2_student.courses_in_progress += ['Python']
 
@@ -101,6 +107,19 @@ print(some2_reviewer)
 print(some2_lecturer)
 print(some2_student)
 print(some2_lecturer.average() > some2_student.average())
+
+
+
+def average_rating_for_course(course, student_list):
+    sum_rating = 0
+    quantity_rating = 0
+    for stud in student_list:
+        for course in stud.grades:
+            stud_sum_rating = stud.av_rating_for_course(course)
+            sum_rating += stud_sum_rating
+            quantity_rating += 1
+    average_rating = round(sum_rating / quantity_rating, 2)
+    return average_rating
 
   
 best_student = Student('Ruoy', 'Eman', 'your_gender')
